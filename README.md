@@ -167,43 +167,7 @@ print("Gradient Boosting - MSE:", mean_squared_error(y_test, y_pred_gb))
 print("Gradient Boosting - R-squared:", r2_score(y_test, y_pred_gb))
 ```
 
-## **7. Model Optimization**
 
-### **7.1 Hyperparameter Tuning**
-
-Improving model performance by tuning hyperparameters using techniques like Grid Search.
-
-```python
-from sklearn.model_selection import GridSearchCV
-
-# Example for Random Forest
-param_grid = {
-    'n_estimators': [50, 100, 200],
-    'max_depth': [None, 10, 20],
-    'min_samples_split': [2, 5, 10]
-}
-
-grid_search = GridSearchCV(estimator=model_rf, param_grid=param_grid, cv=5)
-grid_search.fit(X_train, y_train)
-
-print("Best parameters for Random Forest:", grid_search.best_params_)
-```
-
-### **7.2 Model Selection**
-
-Select the best-performing model based on evaluation metrics and hyperparameter tuning results.
-
-### **7.3 Model Saving**
-
-Save the best model for future use or deployment.
-
-```python
-import joblib
-
-# Save the best model (e.g., Random Forest)
-joblib.dump(grid_search.best_estimator_, 'best_model.pkl')
-```
-
-## **8. Conclusion**
+## **7. Conclusion**
 
 This report outlines the process of developing a House Price Prediction System. By collecting and preprocessing data, engineering features, selecting and training models, and evaluating their performance, we aim to create a robust predictive model for estimating house prices. Model optimization and saving ensure that the best-performing model is available for future predictions.
